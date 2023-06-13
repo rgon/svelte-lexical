@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiFormatFont } from '@mdi/js';
+
   import {$patchStyleText as patchStyleText} from '@lexical/selection';
   import {
     $getSelection as getSelection,
@@ -42,8 +45,9 @@
   disabled={!$isEditable}
   buttonClassName={'toolbar-item ' + style}
   buttonLabel={$value}
-  buttonIconClassName="icon block-type font-family"
   {buttonAriaLabel}>
+  <Icon path={mdiFormatFont} slot="button" />
+
   {#each FONT_FAMILY_OPTIONS as [option, text]}
     <DropDownItem
       class={`item ${$value === option ? 'active dropdown-item-active' : ''}`}

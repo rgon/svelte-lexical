@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import {
     INSERT_ORDERED_LIST_COMMAND,
     REMOVE_LIST_COMMAND,
@@ -26,6 +29,6 @@
   class={'item ' +
     ($blockType === 'number' ? 'active dropdown-item-active' : '')}
   on:click={formatNumberedList}>
-  <i class="icon numbered-list" />
+  <Icon path={blockTypeToIcon['number']} />
   <span class="text">Numbered List</span>
 </DropDownItem>

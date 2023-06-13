@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiFormatStrikethrough } from '@mdi/js';
+
   import {FORMAT_TEXT_COMMAND} from 'lexical';
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
@@ -19,5 +22,5 @@
   title="Strikethrough"
   type="button"
   aria-label="Format text with a strikethrough">
-  <i class="format strikethrough" />
+  <Icon path={mdiFormatStrikethrough} />
 </button>

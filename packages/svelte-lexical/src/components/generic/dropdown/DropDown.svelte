@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {mdiChevronDown} from '@mdi/js';
+
   import {CAN_USE_DOM} from '../../../environment/canUseDOM';
   import DropDownItems from './DropDownItems.svelte';
 
@@ -61,7 +64,8 @@
     <span class="text dropdown-button-text">{buttonLabel}</span>
   {/if}
 
-  <i class="chevron-down" />
+  <slot name="button" />
+  <Icon path={mdiChevronDown} class="dropdown-button-icon" />
 </button>
 
 {#if showDropDown}

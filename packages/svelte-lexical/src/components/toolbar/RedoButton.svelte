@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiRedo } from '@mdi/js';
+
   import {
     CAN_REDO_COMMAND,
     REDO_COMMAND,
@@ -40,5 +43,5 @@
   type="button"
   class="toolbar-item"
   aria-label="Redo">
-  <i class="format redo" />
+  <Icon path={mdiRedo} />
 </button>

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiFormatUnderline } from '@mdi/js';
+
   import {getContext} from 'svelte';
   import {FORMAT_TEXT_COMMAND} from 'lexical';
   import type {Writable} from 'svelte/store';
@@ -22,5 +25,5 @@
   aria-label={`Format text to underlined. Shortcut: ${
     IS_APPLE ? '⌘U' : 'Ctrl+U'
   }`}>
-  <i class="format underline" />
+  <Icon path={mdiFormatUnderline} />
 </button>

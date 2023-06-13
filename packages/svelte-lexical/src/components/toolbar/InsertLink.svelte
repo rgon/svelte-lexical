@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiLink } from '@mdi/js';
+
   import {TOGGLE_LINK_COMMAND} from '@lexical/link';
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
@@ -25,5 +28,5 @@
   aria-label="Insert link"
   title="Insert link"
   type="button">
-  <i class="format link" />
+  <Icon path={mdiLink} />
 </button>

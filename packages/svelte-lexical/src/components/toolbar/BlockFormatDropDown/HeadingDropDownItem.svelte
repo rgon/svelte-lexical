@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import DropDownItem from '../../generic/dropdown/DropDownItem.svelte';
   import {
     $getSelection as getSelection,
@@ -40,6 +43,6 @@
   class={'item ' +
     ($blockType === headingSize ? 'active dropdown-item-active' : '')}
   on:click={() => formatHeading(headingSize)}>
-  <i class="icon {headingSize}" />
+  <Icon path={blockTypeToIcon[headingSize]} />
   <span class="text">Heading {headingSize.charAt(1)}</span>
 </DropDownItem>

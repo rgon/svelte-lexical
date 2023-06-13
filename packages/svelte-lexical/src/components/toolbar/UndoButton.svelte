@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiUndo } from '@mdi/js';
+
   import {
     CAN_UNDO_COMMAND,
     UNDO_COMMAND,
@@ -40,5 +43,5 @@
   type="button"
   class="toolbar-item spaced"
   aria-label="Undo">
-  <i class="format undo" />
+  <Icon path={mdiUndo} />
 </button>

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../../../../components/generic/Icon.svelte';
+  import {mdiClipboard, mdiCheckCircle} from '@mdi/js';
+
   import {$isCodeNode as isCodeNode} from '@lexical/code';
   import {
     $getNearestNodeFromDOMNode as getNearestNodeFromDOMNode,
@@ -51,8 +54,8 @@
 
 <button class="menu-item" on:click={handleClick} aria-label="copy">
   {#if isCopyCompleted}
-    <i class="format success" />
+    <Icon path={mdiCheckCircle} />
   {:else}
-    <i class="format copy" />
+    <Icon path={mdiClipboard} />
   {/if}
 </button>

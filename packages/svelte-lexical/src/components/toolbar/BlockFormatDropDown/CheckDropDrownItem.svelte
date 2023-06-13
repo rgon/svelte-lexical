@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import {INSERT_CHECK_LIST_COMMAND, REMOVE_LIST_COMMAND} from '@lexical/list';
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
@@ -23,6 +26,6 @@
   class={'item ' +
     ($blockType === 'check' ? 'active dropdown-item-active' : '')}
   on:click={formatCheckList}>
-  <i class="icon check-list" />
+  <Icon path={blockTypeToIcon['check']} />
   <span class="text">Check List</span>
 </DropDownItem>

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiCodeBraces } from '@mdi/js';
+
   import {FORMAT_TEXT_COMMAND} from 'lexical';
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
@@ -18,5 +21,5 @@
   title="Insert code block"
   type="button"
   aria-label="Insert code block">
-  <i class="format code" />
+  <Icon path={mdiCodeBraces} />
 </button>

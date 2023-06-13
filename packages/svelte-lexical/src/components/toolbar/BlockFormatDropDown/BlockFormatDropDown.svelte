@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import {getIsEditable} from '../../../core/composerContext';
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
@@ -13,8 +16,8 @@
 <DropDown
   disabled={!$isEditable}
   buttonClassName="toolbar-item block-controls"
-  buttonIconClassName={'icon block-type ' + $blockType}
   buttonLabel={blockTypeToBlockName[$blockType]}
   buttonAriaLabel="Formatting options for text style">
+  <Icon path={blockTypeToIcon[$blockType]} slot="button" />
   <slot />
 </DropDown>

@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import {mdiDownloadBoxOutline} from '@mdi/js';
+
   import type {LexicalEditor} from 'lexical';
   import {exportFile} from '@lexical/file';
   import {getEditor} from '../../core/composerContext';
@@ -15,5 +18,5 @@
     })}
   title="Export"
   aria-label="Export editor state to JSON">
-  <i class="export" />
+  <Icon path={mdiDownloadBoxOutline} />
 </button>

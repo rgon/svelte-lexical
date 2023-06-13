@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiFormatItalic } from '@mdi/js';
+
   import {FORMAT_TEXT_COMMAND} from 'lexical';
   import {getActiveEditor, getIsEditable} from '../../core/composerContext';
   import {getContext} from 'svelte';
@@ -22,5 +25,5 @@
   aria-label={`Format text as italics. Shortcut: ${
     IS_APPLE ? '⌘I' : 'Ctrl+I'
   }`}>
-  <i class="format italic" />
+  <Icon path={mdiFormatItalic} />
 </button>

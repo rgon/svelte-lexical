@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
   import DropDownItem from '../../generic/dropdown/DropDownItem.svelte';
@@ -34,6 +37,6 @@
   class={'item ' +
     ($blockType === 'paragraph' ? 'active dropdown-item-active' : '')}
   on:click={formatParagraph}>
-  <i class="icon paragraph" />
+  <Icon path={blockTypeToIcon['paragraph']} />
   <span class="text">Normal</span>
 </DropDownItem>

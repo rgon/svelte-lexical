@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import {
     INSERT_UNORDERED_LIST_COMMAND,
     REMOVE_LIST_COMMAND,
@@ -26,6 +29,6 @@
   class={'item ' +
     ($blockType === 'bullet' ? 'active dropdown-item-active' : '')}
   on:click={formatBulletList}>
-  <i class="icon bullet-list" />
+  <Icon path={blockTypeToIcon['bullet']} />
   <span class="text">Bullet List</span>
 </DropDownItem>

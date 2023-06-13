@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiFormatFontSizeIncrease } from '@mdi/js';
+
   import {$patchStyleText as patchStyleText} from '@lexical/selection';
   import {
     $getSelection as getSelection,
@@ -49,6 +52,8 @@
   buttonLabel={$value}
   buttonIconClassName=""
   {buttonAriaLabel}>
+  <Icon path={mdiFormatFontSizeIncrease} slot="button" />
+
   {#each FONT_SIZE_OPTIONS as [option, text]}
     <DropDownItem
       class={`item ${

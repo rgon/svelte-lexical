@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import {mdiOpenInApp} from '@mdi/js';
+
   import type {LexicalEditor} from 'lexical';
   import {importFile} from '@lexical/file';
   import {getEditor} from '../../core/composerContext';
@@ -11,5 +14,6 @@
   on:click={() => importFile(editor)}
   title="Import"
   aria-label="Import editor state from JSON">
-  <i class="import" />
+
+  <Icon path={mdiOpenInApp} />
 </button>

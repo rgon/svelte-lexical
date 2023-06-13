@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Icon from '../../generic/Icon.svelte';
+  import {blockTypeToIcon} from './blockTypeToIcon';
+
   import {getContext} from 'svelte';
   import type {Writable} from 'svelte/store';
   import {getEditor} from '../../../core/composerContext';
@@ -44,6 +47,6 @@
 <DropDownItem
   class={'item ' + ($blockType === 'code' ? 'active dropdown-item-active' : '')}
   on:click={formatCode}>
-  <i class="icon code" />
+  <Icon path={blockTypeToIcon['code']} />
   <span class="text">Code Block</span>
 </DropDownItem>

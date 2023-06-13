@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import { mdiFormatBold } from '@mdi/js';
   import {FORMAT_TEXT_COMMAND} from 'lexical';
   import {getActiveEditor, getIsEditable} from '../../core/composerContext';
   import {getContext} from 'svelte';
@@ -20,5 +22,5 @@
   title={IS_APPLE ? 'Bold (⌘B)' : 'Bold (Ctrl+B)'}
   type="button"
   aria-label={`Format text as bold. Shortcut: ${IS_APPLE ? '⌘B' : 'Ctrl+B'}`}>
-  <i class="format bold" />
+  <Icon path={mdiFormatBold} />
 </button>

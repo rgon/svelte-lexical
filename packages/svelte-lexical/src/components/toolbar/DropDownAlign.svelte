@@ -1,4 +1,10 @@
 <script lang="ts">
+  import Icon from '../generic/Icon.svelte';
+  import {
+    mdiFormatAlignRight, mdiFormatAlignLeft, mdiFormatAlignCenter, mdiFormatAlignJustify,
+    mdiFormatIndentIncrease, mdiFormatIndentDecrease
+  } from '@mdi/js';
+
   import {
     FORMAT_ELEMENT_COMMAND,
     INDENT_CONTENT_COMMAND,
@@ -19,15 +25,16 @@
 <DropDown
   disabled={!$isEditable}
   buttonLabel="Align"
-  buttonIconClassName="icon left-align"
   buttonClassName="toolbar-item spaced alignment"
   buttonAriaLabel="Formatting options for text alignment">
+  <Icon path={mdiFormatAlignLeft} slot="button" />
+
   <DropDownItem
     on:click={() => {
       $activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left');
     }}
     class="item">
-    <i class="icon left-align" />
+    <Icon path={mdiFormatAlignLeft} />
     <span class="text">Left Align</span>
   </DropDownItem>
   <DropDownItem
@@ -35,7 +42,7 @@
       $activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center');
     }}
     class="item">
-    <i class="icon center-align" />
+    <Icon path={mdiFormatAlignCenter} />
     <span class="text">Center Align</span>
   </DropDownItem>
   <DropDownItem
@@ -43,7 +50,7 @@
       $activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right');
     }}
     class="item">
-    <i class="icon right-align" />
+    <Icon path={mdiFormatAlignRight} />
     <span class="text">Right Align</span>
   </DropDownItem>
   <DropDownItem
@@ -51,7 +58,7 @@
       $activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify');
     }}
     class="item">
-    <i class="icon justify-align" />
+    <Icon path={mdiFormatAlignJustify} />
     <span class="text">Justify Align</span>
   </DropDownItem>
   <Divider />
@@ -60,7 +67,7 @@
       $activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined);
     }}
     class="item">
-    <i class={'icon ' + ($isRTL ? 'indent' : 'outdent')} />
+    <Icon path={$isRTL ? mdiFormatIndentIncrease : mdiFormatIndentDecrease} />
     <span class="text">Outdent</span>
   </DropDownItem>
   <DropDownItem
@@ -68,7 +75,7 @@
       $activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined);
     }}
     class="item">
-    <i class={'icon ' + ($isRTL ? 'outdent' : 'indent')} />
+    <Icon path={$isRTL ? mdiFormatIndentDecrease : mdiFormatIndentIncrease} />
     <span class="text">Indent</span>
   </DropDownItem>
 </DropDown>

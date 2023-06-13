@@ -1,4 +1,5 @@
 <script lang="ts">
+  import './styles.css'
   import {ListItemNode, ListNode} from '@lexical/list';
   import {HeadingNode, QuoteNode} from '@lexical/rich-text';
   import type {EditorThemeClasses, LexicalEditor} from 'lexical';
